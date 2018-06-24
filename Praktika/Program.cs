@@ -10,6 +10,8 @@ namespace Praktika
     {
         static void Main(string[] args)
         {
+            Task9.Launch();
+            Console.ReadKey();
         }
     }
 }
