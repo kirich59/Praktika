@@ -33,11 +33,12 @@ namespace Praktika
                     + "3. Задание 4.\n"
                     + "4. Задание 5.\n"
                     + "5. Задание 6.\n"
-                    + "6. Задание 8.\n"
-                    + "7. Задание 9.\n"
-                    + "8. Задание 11.\n"
-                    + "9. Задание 12.\n"
-                    + "10. Выход.\n");
+                    + "6. Задание 7.\n"
+                    + "7. Задание 8.\n"
+                    + "8. Задание 9.\n"
+                    + "9. Задание 11.\n"
+                    + "10. Задание 12.\n"
+                    + "11. Выход.\n");
                 int sw;
                 InputNumber(1, 10, out sw);
                 switch (sw)
@@ -65,18 +66,21 @@ namespace Praktika
                         Task6.Launch();
                         break;
                     case 6:
-                        Task8.Launch();
+                        Task7.Launch();
                         break;
                     case 7:
-                        Task9.Launch();
+                        Task8.Launch();
                         break;
                     case 8:
-                        Task11.Launch();
+                        Task9.Launch();
                         break;
                     case 9:
-                        Task12.Launch();
+                        Task11.Launch();
                         break;
                     case 10:
+                        Task12.Launch();
+                        break;
+                    case 11:
                         exit = true;
                         break;
                 }

@@ -10,12 +10,16 @@ namespace Praktika
     {
         public static void Launch()
         {
-            Console.WriteLine("Введите точность");
-            double eps = Task3.InputDouble();
+            double eps = -1;
+            while (eps <= 0)
+            {
+                Console.WriteLine("Введите точность > 0");
+                eps = Task3.InputDouble();
+            }
             double sum = 0;
             int i = 1;
             double cur = 1;
-            while (Math.Abs(cur) > eps)
+            while (Math.Abs(cur) >= eps)
             {
                 sum += cur;
                 i++;
