@@ -40,7 +40,7 @@ namespace Praktika
             MyList begining = new MyList(N);
             MyList current = begining;
 
-            for (int i = N-1; i >= 0; i--)
+            for (int i = N-1; i > 0; i--)
             {
                 current.next = new MyList(i);
                 current = current.next;

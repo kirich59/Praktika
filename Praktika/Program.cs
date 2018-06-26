@@ -8,7 +8,7 @@ namespace Praktika
 {
     class Program
     {
-        private static void InputNumber(int left, int right, out int number)
+        public static void InputNumber(int left, int right, out int number)
         {
             bool ok;
             do
@@ -40,7 +40,7 @@ namespace Praktika
                     + "10. Задание 12.\n"
                     + "11. Выход.\n");
                 int sw;
-                InputNumber(1, 10, out sw);
+                InputNumber(1, 11, out sw);
                 switch (sw)
                 {
                     case 1:

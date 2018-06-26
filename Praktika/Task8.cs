@@ -8,12 +8,16 @@ namespace Praktika
 {
     class Task8
     {
-        const int n = 50;
+        static int n;
         static int[,] MyGraph;
-
-        static int timer, count = 0;
         static bool[] used = new bool[n];
 
+        static void Prepare()
+        {
+            Console.WriteLine("Введите N");
+            Program.InputNumber(1, 100, out n);
+            used = new bool[n];
+        }
         static int[,] GraphGenerator(int size)
         {
             Random rnd = new Random();
@@ -96,9 +100,10 @@ namespace Praktika
         }
         public static void Launch()
         {
+            Prepare();
             MyGraph = GraphGenerator(n);
             ShowGraph(MyGraph);
-            Console.WriteLine("Компонента связанности: {0}", Find());
+            Console.WriteLine("Компонент связанности: {0}", Find());
             Console.ReadLine();
         }
     }
