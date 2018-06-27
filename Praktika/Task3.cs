@@ -8,12 +8,15 @@ namespace Praktika
 {
     class Task3
     {
+        //ввод вещественного числа с проверкой
         public static double InputDouble()
         {
             double x;
             while (!Double.TryParse(Console.ReadLine(), out x)) Console.WriteLine("Повторите попытку");
             return x;
         }
+
+        //запуск задания
         public static void Launch()
         {
             Console.WriteLine("Введите координату x");

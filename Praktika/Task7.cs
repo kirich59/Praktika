@@ -9,6 +9,7 @@ namespace Praktika
 {
     class Task7
     {
+        //запуск задания
         public static void Launch()
         {
             string func = string.Empty;
@@ -29,6 +30,7 @@ namespace Praktika
             Console.WriteLine(answer);
         }
 
+        //проверка на степень двойки
         static bool IsPowerOfTwo(int number)
         {
             if (number == 2) return true;
@@ -36,6 +38,7 @@ namespace Praktika
             return false;
         }
 
+        //проверка вектора функции на правильность ввода
         static bool CheckFunction(string func)
         {
             //Проверка всех символов
@@ -47,17 +50,20 @@ namespace Praktika
             if (!IsPowerOfTwo(func.Length)) return false;
             return true;
         }
-        
+
+        //проверка, относится ли функция к классу Т0
         static bool IsTZero(string func)
         {
             return func[0] == '0';
         }
 
+        //проверка, относится ли функция к классу Т1
         static bool IsTOne(string func)
         {
             return func.Last() == '1';
         }
 
+        //проверка, относится ли функция к классу М
         static bool IsMonatic(string func)
         {
             bool existOne = false;
@@ -69,6 +75,7 @@ namespace Praktika
             return true;
         }
 
+        //проверка, относится ли функция к классу S
         static bool IsSelfDual(string func)
         {
             for (int i = 0, j = func.Length - 1; i < j; i++, j--)
@@ -77,6 +84,7 @@ namespace Praktika
             return true;
         }
 
+        //проверка, относится ли функция к классу L
         static bool IsLinear(string func)
         {
             bool[] vector = GetPascalTriangle(func);
@@ -88,7 +96,8 @@ namespace Praktika
 
             return true;
         }
-    
+
+        //построение треугольника паскаля и возвращение вектора коэффициэнтов полинома Жегалкина
         static bool[] GetPascalTriangle(string func)
         {
             bool[,] pascalT = new bool[func.Length, func.Length];
@@ -105,13 +114,14 @@ namespace Praktika
                     for (int j = func.Length - shift; j > -1; j--)
                     {
                         pascalT[i, j] = pascalT[i - 1, j + 1] != pascalT[i - 1, j];
-                        if (j == 0) vector[i] = pascalT[i, j]; 
+                        if (j == 0) vector[i] = pascalT[i, j];
                     }
 
             return vector;
         }
     }
 
+    //класс для перебора комбинаций из 0 и 1
     public class Pereberator : IEnumerable
     {
         protected int _maxNumber;
@@ -132,7 +142,7 @@ namespace Praktika
                 _maxNumberByteMask = BytePresenter(value);
             }
         }
-         
+
         private string this[int i] => LeadToPattern(BytePresenter(i));
 
         private int PermutationsCount => (int)Math.Pow(2, MaxNumberByteMask.Length);
